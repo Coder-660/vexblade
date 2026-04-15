@@ -2,5 +2,6 @@
   "item.vexblade.riftstone_sword": "Riftstone Sword",
   "item.vexblade.riftstone_pickaxe": "Riftstone Pickaxe",
   "item.vexblade.riftstone_axe": "Riftstone Axe",
-  "item.vexblade.riftstone_shovel": "Riftstone Shovel"
+  "item.vexblade.riftstone_shovel": "Riftstone Shovel",
+  "itemgroup.vexblade": "Vexblade"
 }
