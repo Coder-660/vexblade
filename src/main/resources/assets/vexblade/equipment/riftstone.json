@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "vexblade:riftstone"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "vexblade:riftstone"
+      }
+    ]
+  }
+}
