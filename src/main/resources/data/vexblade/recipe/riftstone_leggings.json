@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": "vexblade:riftstone"
+  },
+  "result": {
+    "id": "vexblade:riftstone_leggings"
+  }
+}
