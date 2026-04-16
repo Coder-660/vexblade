@@ -21,7 +21,11 @@ public class ModItems {
         Registry.register(BuiltInRegistries.ITEM, itemKey, item);
 
         return item;
+
+
     }
+
+
 
     public static void initialize(){
         // Get the event for modifying entries in the ingredients group.

@@ -3,5 +3,10 @@
   "item.vexblade.riftstone_pickaxe": "Riftstone Pickaxe",
   "item.vexblade.riftstone_axe": "Riftstone Axe",
   "item.vexblade.riftstone_shovel": "Riftstone Shovel",
-  "itemgroup.vexblade": "Vexblade"
+  "item.vexblade.riftstone": "Riftstone",
+  "item.vexblade.riftstone_helmet": "Riftstone Helmet",
+  "item.vexblade.riftstone_chestplate": "Riftstone Chestplate",
+  "item.vexblade.riftstone_leggings": "Riftstone Leggings",
+  "item.vexblade.riftstone_boots": "Riftstone Boots",
+  "itemGroup.vexblade": "Vexblade"
 }

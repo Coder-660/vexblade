@@ -17,11 +17,12 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
+import static edce.vexblade.RiftstoneArmor.REPAIRS_RIFTSTONE_ARMOR;
+
 public class RiftstoneTool {
 
-    public static final int BASE_DURABILITY = 15;
-    public static final ResourceKey<EquipmentAsset> RIFTSTONE_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Vexblade.MOD_ID, "riftstone"));
-    public static final TagKey<Item> REPAIRS_RIFTSTONE_ARMOR = TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath(Vexblade.MOD_ID, "repairs_riftstone_armor"));
+
+
 
     public static void InitalizeTools(){
         //Initalizes tools.
@@ -34,21 +35,7 @@ public class RiftstoneTool {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
                 .register((itemGroup) -> itemGroup.accept(RIFTSTONE_SHOVEL));
     }
-    public static final ArmorMaterial RiftstoneArmorMaterial = new ArmorMaterial(
-            BASE_DURABILITY,
-            Map.of(
-                    ArmorType.HELMET, 3,
-                    ArmorType.CHESTPLATE, 9,
-                    ArmorType.LEGGINGS, 7,
-                    ArmorType.BOOTS, 3
-            ),
-            5,
-            SoundEvents.ARMOR_EQUIP_NETHERITE,
-            0.0F,
-            0.0F,
-            REPAIRS_RIFTSTONE_ARMOR,
-            RIFTSTONE_ARMOR_MATERIAL_KEY
-    );
+
 
 
     public static final ToolMaterial RIFTSTONE_TOOL_MATERIAL = new ToolMaterial(

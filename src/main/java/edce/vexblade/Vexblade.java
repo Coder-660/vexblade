@@ -19,5 +19,7 @@ public class Vexblade implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		RiftstoneTool.InitalizeTools();
+		Riftstone.InitalizeRiftstone();
+		RiftstoneArmor.InitalizeRiftstoneArmor();
 	}
 }
