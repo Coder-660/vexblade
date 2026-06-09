@@ -1,10 +1,12 @@
 package edce.vexblade;
 
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
@@ -14,6 +16,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 import java.util.Map;
 
 import static edce.vexblade.ModItems.register;
+import static edce.vexblade.RiftstoneTool.RIFTSTONE_SWORD;
 
 
 public class RiftstoneArmor {
@@ -23,6 +26,14 @@ public class RiftstoneArmor {
 
     public static void InitalizeRiftstoneArmor(){
         //Init armor class
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
+                .register((itemGroup) -> itemGroup.accept(RIFTSTONE_HELMET));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
+                .register((itemGroup) -> itemGroup.accept(RIFTSTONE_CHESTPLATE));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
+                .register((itemGroup) -> itemGroup.accept(RIFTSTONE_LEGGINGS));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
+                .register((itemGroup) -> itemGroup.accept(RIFTSTONE_BOOTS));
     }
     public static final ArmorMaterial INSTANCE = new ArmorMaterial(
             BASE_DURABILITY,
@@ -70,4 +81,8 @@ public class RiftstoneArmor {
             new Item.Properties().humanoidArmor(INSTANCE, ArmorType.BOOTS)
                     .durability(ArmorType.BOOTS.getDurability(BASE_DURABILITY))
     );
+
+
+
+
 }

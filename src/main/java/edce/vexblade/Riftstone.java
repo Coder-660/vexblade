@@ -1,7 +1,7 @@
 package edce.vexblade;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -11,6 +11,9 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import static edce.vexblade.ModItems.register;
 
@@ -43,9 +46,16 @@ public class Riftstone {
     public static void InitalizeRiftstone(){
         // Get the event for modifying entries in the ingredients group.
 
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.accept(RIFTSTONE));
     }
 
     public static final Item RIFTSTONE = register("riftstone", Item::new, new Item.Properties());
+    public static final Block RIFTSTONE_ORE = ModBlocks.register(
+            "riftstone_ore",
+            Block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.STONE),
+            true
+    );
+
 }

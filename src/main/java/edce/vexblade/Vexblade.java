@@ -21,5 +21,6 @@ public class Vexblade implements ModInitializer {
 		RiftstoneTool.InitalizeTools();
 		Riftstone.InitalizeRiftstone();
 		RiftstoneArmor.InitalizeRiftstoneArmor();
+		ModBlocks.initalizeModBlocks();
 	}
 }
