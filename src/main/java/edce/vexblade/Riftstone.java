@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import static edce.vexblade.ModItems.register;
+import static edce.vexblade.ModBlocks.register;
 
 public class Riftstone {
     //Stuff for tab
@@ -43,19 +44,21 @@ public class Riftstone {
 
 
     */
-    public static void InitalizeRiftstone(){
+    public static void InitalizeRiftstone() {
         // Get the event for modifying entries in the ingredients group.
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.accept(RIFTSTONE));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(RIFTSTONE_ORE.asItem());
+        });
     }
 
     public static final Item RIFTSTONE = register("riftstone", Item::new, new Item.Properties());
-    public static final Block RIFTSTONE_ORE = ModBlocks.register(
+    public static final Block RIFTSTONE_ORE = register(
             "riftstone_ore",
             Block::new,
-            BlockBehaviour.Properties.of().sound(SoundType.STONE),
+            BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(8).requiresCorrectToolForDrops(),
             true
     );
-
 }
