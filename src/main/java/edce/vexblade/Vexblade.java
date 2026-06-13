@@ -2,6 +2,9 @@ package edce.vexblade;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,5 +25,11 @@ public class Vexblade implements ModInitializer {
 		Riftstone.InitalizeRiftstone();
 		RiftstoneArmor.InitalizeRiftstoneArmor();
 		ModBlocks.initalizeModBlocks();
+		// Spawns everywhere in the overworld
+		BiomeModifications.addFeature(
+				BiomeSelectors.foundInOverworld(),
+				GenerationStep.Decoration.UNDERGROUND_ORES,
+				ModWorldPlacedFeatures.RIFTSTONE_ORE_PLACED_KEY
+		);
 	}
 }
