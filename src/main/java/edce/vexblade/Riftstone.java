@@ -7,6 +7,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.inventory.SmokerMenu;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -49,9 +50,14 @@ public class Riftstone {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.accept(RIFTSTONE));
+
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register((creativeTab) -> {
             creativeTab.accept(RIFTSTONE_ORE.asItem());
         });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(DEEPSLATE_RIFTSTONE_ORE.asItem());
+        });
+
     }
 
     public static final Item RIFTSTONE = register("riftstone", Item::new, new Item.Properties());
@@ -59,6 +65,13 @@ public class Riftstone {
             "riftstone_ore",
             Block::new,
             BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(8).requiresCorrectToolForDrops(),
+            true
+    );
+
+    public static final Block DEEPSLATE_RIFTSTONE_ORE = register(
+            "deepslate_riftstone_ore",
+            Block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(9).requiresCorrectToolForDrops(),
             true
     );
 }

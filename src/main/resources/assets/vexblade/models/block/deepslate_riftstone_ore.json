@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "vexblade:block/deepslate_riftstone_ore"
+  }
+}
